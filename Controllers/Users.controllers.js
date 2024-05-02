@@ -97,7 +97,7 @@ exports.loginUsers = async (req, res) => {
 
 exports.logoutUsers = async (req, res) => {
   try {
-    await User.findByIdAndUpdate(
+    await Users.findByIdAndUpdate(
       req.user?.id,
       { $set: { refreshToken: undefined } },
       { new: true }
